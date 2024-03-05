@@ -1,62 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Forensic Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Reset some default browser styles */
-        body, h1, ul, li, form {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Set a background color for the body */
-        body {
-            background-color: #071e3d; /* Custom background color */
-            font-family: 'Courier New', monospace; /* Monospace font for the hacker look */
-            color: #00ff00; /* Green text */
+         body {
+            font-family: 'Courier New', monospace;
+            color: #ff00b7;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Full-screen height */
+            min-height: 100vh;
+            margin: 0;
         }
 
-        /* Center the container vertically and horizontally */
-        .container {
-            height: 500px; /* Increase the height to make the container taller */
-            width: 800px; /* Increase the width to make the container wider */
-            padding: 20px;
-            background-color: #0a3559; /* Custom background color for the container */
-            border: 1px solid #00ff00; /* Green border */
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
         }
+
+        .container {
+            height: 400px;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(36, 36, 36, 0.8); /* Use rgba for background color with transparency */
+            border: 5px solid #4af764;
+            border-radius: 150px;
+            box-shadow: 0 20px 40px rgba(215, 212, 212, 0.2);
+        }
+
 
         h1 {
-            color: #00ff00; /* Green header text */
-            font-size: 24px;
-        }
+    color: #ff5900;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ff11, 0 0 30px #99ff00; /* Adjust the values for the desired glow effect */
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+h1:hover {
+    text-shadow: 0 0 20px #ff0004, 0 0 40px #ff0026, 0 0 60px #ff0026; /* Adjust the values for the desired glow effect on hover */
+}
+
 
         form {
-            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         input[type="file"] {
-            margin: 0 auto;
-            display: block;
-            padding: 10px;
-            background-color: #0a3559; /* Custom background color for the input */
-            border: 1px solid #00ff00; /* Green border */
+            padding: 15px;
+            background-color: #333;
+            border: 4px solid #00ff00;
             color: #00ff00;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 5px;
         }
 
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px;
             cursor: pointer;
             transition: background-color 0.3s;
+            border-radius: 5px;
         }
 
         input[type="submit"]:hover {
@@ -73,30 +98,36 @@
         li {
             margin-bottom: 5px;
         }
-        
+
         #header {
-            color: #00ff00; /* Green text */
-            font-size: 36px; /* Larger font size */
+            color: #00ff00;
+            font-size: 36px;
             position: absolute;
             top: 20px;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        #up-btn{
 
+        #up-btn {
             margin: 20px;
         }
-        
     </style>
 </head>
 <body>
+    <video autoplay loop muted>
+        <source src="../static/computer-hacking-in-process-cyber-security-concept-SBV-314721976-preview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    
+    
     <h1 id="header">Digital Forensic</h1>
     <div class="container">
         <h1>Image Forensic Tool</h1>
         
         <form method="POST" action="/" enctype="multipart/form-data">
             <input type="file" name="file" accept="image/*" required>
-            <input id="up-btn"type="submit" value="Upload and Analyze">
+            <input id="up-btn" type="submit" value="Upload and Analyze">
         </form>
 
         {% with messages = get_flashed_messages() %}

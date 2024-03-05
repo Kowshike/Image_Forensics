@@ -6,8 +6,9 @@ body, h1, ul, li, form {
 
 /* Set a background color for the body */
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
 }
 
 /* Center the container vertically and horizontally */
@@ -15,15 +16,17 @@ body {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #242424;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(244, 66, 214, 0.2);
     text-align: center;
 }
 
 h1 {
-    color: #333;
+    color: #00ff00;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 form {
@@ -31,18 +34,25 @@ form {
 }
 
 input[type="file"] {
-    margin: 0 auto;
-    display: block;
-    padding: 10px;
+    padding: 15px;
+    background-color: #333;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
 }
 
 input[type="submit"] {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 input[type="submit"]:hover {

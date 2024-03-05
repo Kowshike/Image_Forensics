@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from PIL import Image
 from PIL.ExifTags import TAGS
+import os
+from pyexif import pyexif 
+import exifread as er
 
 app = Flask(__name__)
 
@@ -34,12 +37,12 @@ def index():
 
         if file:
             filename = file.filename
-            file_path = f"CyberSecurityForensic/static/{filename}"  # Set the path to the image in the "static" folder
+            file_path = f"static/{filename}"  # Set the path to the image in the "static" folder
             file.save(file_path)
 
             exif_data = extract_image_metadata(file_path)
 
-            return render_template('results.html',filename=filename, exif_data=exif_data)
+            return render_template('results.html', filename=filename, exif_data=exif_data)
 
     return render_template('index.html')
 
