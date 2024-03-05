@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from PIL import Image
 from PIL.ExifTags import TAGS
-import os
-from pyexif import pyexif 
-import exifread as er
 
 app = Flask(__name__)
+app.secret_key = '500ad3b6bac9d6cf964c6f65321e0304'  # Set a secure secret key
 
 def extract_image_metadata(image_path):
     try:
@@ -47,5 +45,6 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4000, debug=True)
-
+    # Use a production-ready server like Gunicorn
+    # Example command: gunicorn -w 4 -b 0.0.0.0:5000 your_app_module:app
+    app.run(host='0.0.0.0', port=4000)
