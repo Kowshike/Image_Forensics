@@ -1,0 +1,3 @@
+[build]
+  command = "python Image_Forensics.py"  # Replace with your build command
+  publish = "S:\white hat\digital-forensic-image-analysis\static\netlify.toml"  # Replace with the path to your static files
